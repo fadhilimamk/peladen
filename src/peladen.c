@@ -5,6 +5,7 @@
 #include <err.h>
 #include <event.h>
 #include <evhttp.h>
+#include <stdio.h>
 
 void generic_handler(struct evhttp_request *req, void *arg)
 {
@@ -18,13 +19,13 @@ void generic_handler(struct evhttp_request *req, void *arg)
 
 int main(int argc, char **argv)
 {
+    printf("server started at 127.0.0.1:8080");
     struct evhttp *httpd;
     event_init();
-    httpd = evhttp_start("127.0.0.1", 8080);
+    httpd = evhttp_start("0.0.0.0", 8080);
 
     /* Set a callback for requests to "/specific". */
     /* evhttp_set_cb(httpd, "/specific", another_handler, NULL); */
-
     /* Set a callback for all other requests. */
     evhttp_set_gencb(httpd, generic_handler, NULL);
 
