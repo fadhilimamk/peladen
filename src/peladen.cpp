@@ -1,12 +1,12 @@
 #include <sys/types.h>
-#include <sys/time.h>
 #include <sys/queue.h>
+#include <sys/time.h>
 #include <stdlib.h>
-#include <err.h>
-#include <event.h>
 #include <evhttp.h>
 #include <stdio.h>
+#include <event.h>
 #include <string>
+#include <err.h>
 
 using namespace std;
 const int PORT = 8080;
@@ -21,7 +21,8 @@ void generic_handler(struct evhttp_request *req, void *arg) {
     if (buf == NULL)
         err(1, "failed to create response buffer");
     
-    string s_req(evhttp_request_uri(req));  
+    string s_req(evhttp_request_uri(req));
+    printf("   - Handling requests [%s]\n", s_req.c_str());
 
     if (s_req.compare("/500b.html") == 0) {
         fp = fopen ("data/500b.html", "r");
@@ -50,7 +51,7 @@ int main(int argc, char **argv) {
     event_init();
     httpd = evhttp_start("0.0.0.0", PORT);
 
-    printf("Server is listening on http://localhost:%d\n", PORT);
+    printf("\n >> Server is listening on http://localhost:%d\n\n", PORT);
 
     /* Set a callback for all requests. */
     evhttp_set_gencb(httpd, generic_handler, NULL);
