@@ -12,10 +12,10 @@ Untuk melakukan pengukuran, kami menggunakan PC yang sama untuk mendapatkan angk
 | Processor  | Intel Core i5  2.3Ghz|
 | OS  | macOS High Sierra v10.13.6 |
 
-## Mengukur Kinerja Web Server
+## A. Mengukur Kinerja Web Server
 > Carilah / kembangkan tool yang dapat digunakan untuk menngukur kinerja web server apache / nginx untuk mengakses sebuah dokumen html yang berukuran sekitar 500 bytes, dan 20 KB. Cek apakah server tersebut mampu melayani hingga 10.000 concurrent request. Laporkan hasil berapa waktu rata - rata dan berapa memory yang digunakan oleh apache / nginx.
 
-Pada tugas ini kami menggunakan tool *Apache Benchmark v2.4* (http://httpd.apache.org/docs/2.4/programs/ab.html) untuk mengukur performa dari server. Sedangkan web server yang diukur kami memilih untuk menggunakana Apache/2.4.33 (http://httpd.apache.org/). Untuk menjalankan pengukuran terlebih dahulu siapkan file berukuran 500B dan 20KB, file tersebut dapat diperoleh dalam direktori [data](https://github.com/fadhilimamk/peladen/tree/master/data). Kemudian nyalakan web server dan jalankan perintah:
+Pada tugas ini kami menggunakan tool [Apache Benchmark v2.4](http://httpd.apache.org/docs/2.4/programs/ab.html) untuk mengukur performa dari server. Sedangkan web server yang diukur kami memilih untuk menggunakana [Apache/2.4.33](http://httpd.apache.org/). Untuk menjalankan pengukuran terlebih dahulu siapkan file berukuran 500B dan 20KB, file tersebut dapat diperoleh dalam direktori [data](https://github.com/fadhilimamk/peladen/tree/master/data). Kemudian nyalakan web server dan jalankan perintah:
 ```
   ab -n 10000 -c 10000 http://localhost/500b.html
   ab -n 10000 -c 10000 http://localhost/20kb.html
@@ -32,7 +32,7 @@ Didapatkan hasil sebagai berikut:
 | Maximum Memory Usage (MB)         | x | x |
 | Average Memory Usage (MB)         | x | x |
 
-## Implementasi Event-Based Web Server Sederhana
+## B. Implementasi Event-Based Web Server Sederhana
 > Buatlah program kecil web server dengan menggunakan pendekatan event-based server. Program tersebut dapat menerima request file dengan format HTTP request pada port tertentu (konfigurasi).
 Program dibuat menggunakan bahasa C/C++, dapat ditulis menggunakan socket, library libev. Boleh menggunakan low-level event-based I/O library yang lain. Lakukaan pengukuran dengan cara yang sama dengan tugas no. 1 di atas.
 
