@@ -5,6 +5,7 @@ Oleh:
 - Fadhil Imam Kurnia (13515146)
 
 Untuk melakukan pengukuran, kami menggunakan PC yang sama untuk mendapatkan angka yang akurat. Spesifikasi PC yang digunakan untuk pengukuran:
+
 | Parameter  | Spesifikasi |
 | ------------- | ------------- |
 | Memori  | 8 GB 2133 MHz LPDDR3  |
@@ -21,6 +22,7 @@ Pada tugas ini kami menggunakan tool *Apache Benchmark v2.4* (http://httpd.apach
 ```
 
 Didapatkan hasil sebagai berikut:
+
 | Benchmark                         | 500B | 20KB |
 | -------------                     | ------------- | ------------- |
 | Testing Time (s)                  | x | x | 
@@ -39,6 +41,7 @@ Untuk mengimplementasikan web server sederhana, kami menggunakan library [libeve
 Kami melakukan benchmarking dengan 10000 requests, menggunakan metode yang sama seperti pengukuran pada Apache sebelumnya. Didapatkan hasil sebagai berikut:
 
 Didapatkan hasil sebagai berikut:
+
 | Benchmark                         | 500B | 20KB |
 | -------------                     | ------------- | ------------- |
 | Testing Time (s)                  | x | x | 
