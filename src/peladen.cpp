@@ -43,6 +43,8 @@ void generic_handler(struct evhttp_request *req, void *arg) {
     
     evbuffer_add_file(buf, fd, 0, sz);
     evhttp_send_reply(req, HTTP_OK, "OK", buf);
+    evbuffer_free(buf);
+    fclose(fp);
 }
 
 int main(int argc, char **argv) {

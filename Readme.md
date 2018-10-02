@@ -17,20 +17,19 @@ Untuk melakukan pengukuran, kami menggunakan PC yang sama untuk mendapatkan angk
 
 Pada tugas ini kami menggunakan tool [Apache Benchmark v2.4](http://httpd.apache.org/docs/2.4/programs/ab.html) untuk mengukur performa dari server. Sedangkan web server yang diukur kami memilih untuk menggunakana [Apache/2.4.33](http://httpd.apache.org/). Untuk menjalankan pengukuran terlebih dahulu siapkan file berukuran 500B dan 20KB, file tersebut dapat diperoleh dalam direktori [data](https://github.com/fadhilimamk/peladen/tree/master/data). Kemudian nyalakan web server dan jalankan perintah:
 ```
-  ab -n 10000 -c 10000 http://localhost/500b.html
-  ab -n 10000 -c 10000 http://localhost/20kb.html
+  ab -n 10000 -kn 10000 http://localhost/500b.html
+  ab -n 10000 -kn 10000 http://localhost/20kb.html
 ```
 
 Didapatkan hasil sebagai berikut:
 
 | Benchmark                         | 500B | 20KB |
 | -------------                     | ------------- | ------------- |
-| Testing Time (s)                  | x | x | 
-| Average Request Per Second (rps)  | x | x |
-| Average Request Time (s)          | x | x |
-| Transfer Rate (KB/s)              | x | x |
-| Maximum Memory Usage (MB)         | x | x |
-| Average Memory Usage (MB)         | x | x |
+| Testing Time (s)                  | 1.121 | 1.162 | 
+| Average Request Per Second (rps)  | 8917.72 | 8602.84 |
+| Average Request Time (s)          | 0.112 | 0.116 |
+| Transfer Rate (KB/s)              | 6806.42 | 170414.88 |
+| Memory Usage (KB)                 | 988 | 936 |
 
 ## B. Implementasi Event-Based Web Server Sederhana
 > Buatlah program kecil web server dengan menggunakan pendekatan event-based server. Program tersebut dapat menerima request file dengan format HTTP request pada port tertentu (konfigurasi).
@@ -44,9 +43,8 @@ Didapatkan hasil sebagai berikut:
 
 | Benchmark                         | 500B | 20KB |
 | -------------                     | ------------- | ------------- |
-| Testing Time (s)                  | x | x | 
-| Average Request Per Second (rps)  | x | x |
-| Average Request Time (s)          | x | x |
-| Transfer Rate (KB/s)              | x | x |
-| Maximum Memory Usage (MB)         | x | x |
-| Average Memory Usage (MB)         | x | x |
+| Testing Time (s)                  | 1.211 | 1.378 | 
+| Average Request Per Second (rps)  | 8259.26 | 7257.83 |
+| Average Request Time (s)          | 0.121 | 0.138 |
+| Transfer Rate (KB/s)              | 4912.00 | 142541.26 |
+| Memory Usage (MB)                 | 1.1 | 0.88 |
