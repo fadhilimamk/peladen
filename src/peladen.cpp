@@ -40,7 +40,6 @@ void generic_handler(struct evhttp_request *req, void *arg) {
         fseek(fp, 0L, SEEK_END);
         sz = ftell(fp);
     }
-    
     evbuffer_add_file(buf, fd, 0, sz);
     evhttp_send_reply(req, HTTP_OK, "OK", buf);
     evbuffer_free(buf);
